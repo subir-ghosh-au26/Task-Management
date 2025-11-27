@@ -1,0 +1,22 @@
+/backend/.env
+/ backend/node_modules
+/ backend/.vscode
+/ backend/dist
+/ backend/.DS_Store
+/ backend/.env
+/ frontend/node_modules
+/ frontend/.vscode
+/ frontend/dist
+/ frontend/.DS_Store
+/ frontend/.env
+/ .DS_Store
+/ .vscode
+/ .env
+/ .idea
+/ *.log
+/ npm-debug.log*
+/ yarn-debug.log*
+/ yarn-error.log*
+/ pnpm-debug.log*
+/ .next
+/ output
