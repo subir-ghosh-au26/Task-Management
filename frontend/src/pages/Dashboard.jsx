@@ -159,7 +159,7 @@ const Dashboard = () => {
           count={totalPages} 
           page={page} 
           onChange={(e, val) => setPage(val)} 
-          color="primary" 
+          color="secondary" 
           size="large"
         />
       </Box>

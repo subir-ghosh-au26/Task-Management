@@ -7,6 +7,19 @@ const bcrypt = require("bcryptjs");
 const register = async (req, res) => {
   const { username, password, role } = req.body;
   try {
+
+    if (!username || !password) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
+
+    if (username.length < 3) {
+      return res.status(400).json({ message: "Username must be at least 3 characters long" });
+    }
+
+    if (/\s/.test(username)) {
+      return res.status(400).json({ message: "Username cannot contain spaces" });
+    }
+    
     const existingUser = await User.findOne({ username });
     if (existingUser) return res.status(400).json({ message: 'User already exists' });
 

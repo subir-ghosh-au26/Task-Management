@@ -28,7 +28,7 @@ const Navbar = () => {
                     <>
                     
                         <Typography sx={{ mx: 2 }}>
-                            {user.role}
+                            {user.username}
                         </Typography>
                         <Button color="error" onClick={logout}>
                             Logout

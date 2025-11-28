@@ -38,8 +38,22 @@ const Register = () => {
     e.preventDefault();
     setError('');
 
+     const { username, password } = formData;
+    
+    // Check Length
+    if (username.length < 3) {
+      setError("Username must be at least 3 characters long.");
+      return;
+    }
+
+    // Check for Spaces
+    if (/\s/.test(username)) {
+      setError("Username cannot contain spaces.");
+      return; 
+    }
+    
     try {
-      // Make API Call
+      
       await axios.post('http://localhost:5000/auth/register', formData);
       
       alert('Registration successful! Please login.');
