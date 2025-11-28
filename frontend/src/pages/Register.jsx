@@ -54,7 +54,7 @@ const Register = () => {
     
     try {
       
-      await axios.post('http://localhost:5000/auth/register', formData);
+      await axios.post('https://task-management-rrli.onrender.com/auth/register', formData);
       
       alert('Registration successful! Please login.');
       navigate('/login');

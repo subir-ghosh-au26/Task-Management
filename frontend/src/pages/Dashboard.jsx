@@ -8,7 +8,7 @@ import {
 import { Edit, Delete, Add } from '@mui/icons-material';
 import { AuthContext } from '../App';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'https://task-management-rrli.onrender.com';
 
 const Dashboard = () => {
   const { user, token } = useContext(AuthContext);

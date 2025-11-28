@@ -12,7 +12,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/auth/login', formData);
+      const res = await axios.post('https://task-management-rrli.onrender.com/auth/login', formData);
       login({ username: res.data.username, role: res.data.role }, res.data.token);
       navigate('/');
     } catch (err) { alert('Invalid Credentials'); }
