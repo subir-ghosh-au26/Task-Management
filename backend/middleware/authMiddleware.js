@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 
 // Verify JWT Token
 const verifyToken = (req, res, next) => {
-  const tokenHeader = req.headers['authorization'];
+  const tokenHeader = req.headers['authorization'] || req.headers['Authorization'];
   
   if (!tokenHeader) {
     return res.status(403).json({ message: 'Access Denied: No Token Provided' });
@@ -20,10 +20,11 @@ const verifyToken = (req, res, next) => {
 
 // Verify Admin Role
 const verifyAdmin = (req, res, next) => {
-  if (req.user && req.user.role === 'admin') {
+  if (req.user && (req.user.role === 'admin' || req.user.role === 'Admin')) {
     next();
   } else {
-    res.status(403).json({ message: 'Access Denied: Admins Only' });
+    res.status(403).json({ message: `Access Denied. Server sees your role as: '${req.user?.role}'` });
+    
   }
 };
 

@@ -15,7 +15,7 @@ router.put('/:id', updateTask);
 
 
 // Route to delete a task (admin only)
-router.delete('/:id', verifyAdmin, deleteTask);
+router.delete('/:id', verifyToken, verifyAdmin, deleteTask);
 
 
 module.exports = router;

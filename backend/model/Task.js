@@ -12,8 +12,8 @@ const TaskSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ['pending', 'completed'],
-        default: 'pending'
+        enum: ['Pending', 'Completed'],
+        default: 'Pending'
     },
     createdAt: {
         type: Date,
@@ -25,9 +25,5 @@ const TaskSchema = new mongoose.Schema({
     }
 });
 
-TaskSchema.pre('save', function(next) {
-    this.updatedAt = Date.now();
-    next();
-});
 
 module.exports = mongoose.model('Task', TaskSchema);
